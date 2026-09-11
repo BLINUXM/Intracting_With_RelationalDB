@@ -34,9 +34,8 @@ This project uses the `sakila` sample database (a standard MySQL demo database o
 
 2. **Install dependencies**
    ```
-   pip install python-dotenv mysql-connector-python pandas
+   pip install python-dotenv ipython-sql mysql-connector-python
    ```
-   *(adjust based on the libraries actually imported in the notebook)*
 
 3. **Configure environment variables**
 
@@ -49,7 +48,19 @@ This project uses the `sakila` sample database (a standard MySQL demo database o
    DB_NAME=sakila
    ```
 
-4. **Run the notebook**
+4. **Load the SQL magic extension**
+
+   In the first cell of the notebook:
+   ```
+   %load_ext sql
+   ```
+
+   Then connect using the SQL magic syntax, e.g.:
+   ```
+   %sql mysql+mysqlconnector://DB_USER:DB_PASSWORD@DB_HOST:DB_PORT/DB_NAME
+   ```
+
+5. **Run the notebook**
 
    Open `src/Interactingwithsqldb.ipynb` in VS Code or Jupyter and run the cells in order.
 
